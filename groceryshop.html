@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Shop Calculation</title>
+</head>
+<body>
+    <h1>Grocery Store</h1>
+
+<script language = "javascript" type = "text/javascript">
+    var item1 = "Rice";
+    var item2 = "Sugar";
+    var item3 = "Wheat";
+
+    var rice_price = 50;
+    var sugar_price = 30;
+    var wheat_price = 40;
+
+    var rice_purchased = 10;
+    var sugar_purchased = 8;
+    var wheat_purchased = 10;
+
+    var rice_cost = rice_price * rice_purchased;
+    var sugar_cost = sugar_price * sugar_purchased;
+    var wheat_cost = wheat_price * wheat_purchased;
+
+    console.log(item1 + " Cost: ₹" + rice_cost);
+    console.log(item2 + " Cost: ₹" + sugar_cost);
+    console.log(item3 + " Cost: ₹" + wheat_cost);
+
+    var total_bill = rice_cost + sugar_cost + wheat_cost;
+    console.log("Total Bill: ₹" + total_bill);
+
+    rice_purchased = 8;
+    var rice_cost = rice_price * rice_purchased;
+    var total_bill = rice_cost + sugar_cost + wheat_cost;
+    console.log("Updated" + item1 + " Cost: ₹" + rice_cost);
+    console.log("Updated Total Bill: ₹" + total_bill);
+        
+</script>
+</body>
+</html>
