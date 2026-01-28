@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form demo</title>
+</head>
+<body>
+    <h3>FEEDBACK FORM</h3>
+
+    <button onclick="myFuction()">Try it</button>
+    
+    <script>
+       function myFuction() {
+       var feedback = "   I loved the FOOD and the service!   ";
+
+       var cleanFeedback = feedback.trim();
+       console.log(feedback.trim());
+
+       var lowerFeedback = cleanFeedback.toLowerCase();
+       console.log(cleanFeedback.toLowerCase());
+
+       var convertFeedback = cleanFeedback.replace("FOOD", "ambience");
+       console.log(cleanFeedback.replace("FOOD", "ambience"));
+
+       var positionFeedback = cleanFeedback.indexOf("service");
+       console.log(cleanFeedback.indexOf("service"));
+
+       var wordFeedback = cleanFeedback.split(" ");
+       console.log(cleanFeedback.split(" "));
+       }
+    </script>
+</body>
+</html>
