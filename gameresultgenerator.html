@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Level Web Game</title>
+</head>
+<body>
+    <h4>GAME RESULT GENERATOR</h4>
+    <script>
+
+        var mysteryLevel = Math.floor(Math.random() * 50) + 1;
+        console.log('Random Whole Number Between 1 and 50 :' + mysteryLevel)
+
+        var userScoreString = "45";
+        var userScore = Number(userScoreString);
+        console.log('User Score String to Number :' + userScore)
+        console.log(typeof(userScore));
+
+        var absoluteDiff = Math.abs(mysteryLevel - userScore);
+        console.log('Absolute Difference :' + absoluteDiff )
+
+        var squareRoot = Math.sqrt(userScore);
+        console.log('Square Root of User Score :' + squareRoot)
+
+        var piValue = Math.PI;
+        console.log('Pi Value :' + piValue)
+
+        var implicitConversion = "20" * 5;
+        console.log('Implicit Conversion :' + implicitConversion)
+
+        var highestValue = Math.max(10, 20, mysteryLevel);
+        console.log('Highest Value :' + highestValue)
+
+        var lowestValue = Math.min(10, 20, mysteryLevel);
+        console.log('Lowest Value :' + lowestValue)
+
+    </script>
+</body>
+</html>
