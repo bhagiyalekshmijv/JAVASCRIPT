@@ -1,34 +1,20 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form demo</title>
-</head>
+<html>
 <body>
-    <h3>FEEDBACK FORM</h3>
 
-    <button onclick="myFuction()">Try it</button>
-    
-    <script>
-       function myFuction() {
-       var feedback = "   I loved the FOOD and the service!   ";
+<h2>JavaScript Random</h2>
 
-       var cleanFeedback = feedback.trim();
-       console.log(feedback.trim());
+<p id="demo"></p>
 
-       var lowerFeedback = cleanFeedback.toLowerCase();
-       console.log(cleanFeedback.toLowerCase());
+<script>
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+x = getRandomArbitrary(1, 10);
 
-       var convertFeedback = cleanFeedback.replace("FOOD", "ambience");
-       console.log(cleanFeedback.replace("FOOD", "ambience"));
+document.getElementById("demo").innerHTML = x;
+</script>
 
-       var positionFeedback = cleanFeedback.indexOf("service");
-       console.log(cleanFeedback.indexOf("service"));
-
-       var wordFeedback = cleanFeedback.split(" ");
-       console.log(cleanFeedback.split(" "));
-       }
-    </script>
 </body>
 </html>
