@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Dashboard</title>
+</head>
+<body>
+    <h3>STUDENT RESULT DASHBOARD</h3>
+<p id="output"></p>
+
+    <script>
+
+        var students = [
+            {name:"Anu", score: 78},
+            {name: "Sree", score: 55},
+            {name: "Ram", score: 92},
+            {name: "Mohan", score: 35}
+    ];
+    var output = document.getElementById("output");
+    output.innerHTML += "<li><b>All Students:</b></li>";
+    for (i=0; i<students.length; i++) {
+        output.innerHTML += "<li>" + students[i].name + "</li>";
+    };
+
+    var above60 = students.filter(function(student) {
+    
+        return student.score > 60;
+        });
+        for( i= 0; i< above60.length; i++) {
+            output.innerHTML += "<li><b>Scored above 60:</b>" + above60[i].name + "</li>";
+        }
+
+        var totalScore = students.reduce(function(sum, student) {
+        return sum + student.score;
+        },0);
+        output.innerHTML += "<li><b>Total Score:</b>" + totalScore + "</li>";
+
+        var allPassed = students.every(function(student) {
+            return student.score > 35;
+        });
+        output.innerHTML += "<li><b>All Passed:</b>" + allPassed + "</li>";
+
+        var above90 = students.some(function(student) {
+            return student.score > 90;
+        });
+        output.innerHTML += "<li><b>Above 90:</b>" + above90 + "</li>";
+
+        var sortStudent = students.sort(function(a,b) {
+            return b.score - a.score;
+        });
+        output.innerHTML += "<li><b>Score in Descending Order:</b></li>";  
+
+        sortStudent.forEach(function(student) {
+            output.innerHTML += "<li>" + student.name + "-" + student.score + "</li>";
+    });
+
+    </script>
+</body>
+</html>
