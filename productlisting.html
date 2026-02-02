@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+</head>
+<body>
+    <h3>GROCERY STORE</h3>
+
+    <button onclick="prdtFeatures()">Products</button>
+    
+
+    <p id="pdt"></p>
+    <p id="pdt2"></p>
+    <p id="pdt3"></p>
+
+    <script>
+        var productName = ["Apple", "Pineapple", "Banana"];
+        var productPrice = [50, 70, 40];
+        var pLen, mergeProduct, i;
+
+        function prdtFeatures() {
+            pLen = productName.length;
+            mergeProduct = [];
+            for (i = 0; i < pLen; i++) {
+            mergeProduct.push("Product: " + productName[i] + "- Price: " + productPrice[i] );
+        }
+        
+        var mLen, pList;
+        mLen = mergeProduct.length;
+        pList = "<ul>";
+        for (i = 0; i < mLen; i++) {
+        pList += "<li>" + mergeProduct[i] + "</li>";
+        }
+        pList += "</ul>";
+        document.getElementById("pdt").innerHTML = pList;
+
+
+        var over50 = productPrice.filter(filtpdt);
+        var pPrLen, fList;
+
+        function filtpdt(value, index, array) {
+        return value > 50;
+        }
+        pPrLen = productPrice.length;
+        fList = "<ul>";
+        for (i = 0; i < pPrLen; i++) {
+            if (productPrice[i] > 50) {
+                fList += "<li>Product: " + productName[i] + " - Price: " + productPrice[i] + "</li>"; 
+            }
+            fList += "</ul>";
+            document.getElementById("pdt2").innerHTML = fList;
+        }
+        
+        var updatedList;
+        productName.push("Watermelon");
+        productPrice.push(80);
+        var updateList = document.getElementById("pdt3");
+        updatedList.innerHTML ="";
+        for (i=0; i< productName.length; i++) {
+            updateList.innerHTML += "<li>Product:" + productName[i] + "- Price: " + productPrice[i] + "</li>" ;
+        }
+
+    }
+    </script>
+</body>
+</html>
