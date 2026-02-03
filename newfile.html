@@ -3,17 +3,31 @@
 <html>
 <body>
 
-<h2>JavaScript Random</h2>
+<h2>JavaScript new Date()</h2>
+
+<p>Using new Date(milliseconds), creates a new date object as January 1, 1970, 00:00:00 Universal Time (UTC) plus the milliseconds:</p>
 
 <p id="demo"></p>
 
 <script>
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
-}
-x = getRandomArbitrary(1, 10);
+    let friend = {
+            name: "John",
+            birthDate: "1999-07-05"
+        };
 
-document.getElementById("demo").innerHTML = x;
+var today = new Date();
+var birthDate = new Date(friend.birthDate);
+
+var age = today.getFullYear() - birthDate.getFullYear();
+var day = birthDate.getDate();
+
+if (
+    today.getMonth < birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() && today.getDate() < day)
+) {
+    age--;
+}
+document.getElementById("demo").innerHTML = age;
 </script>
 
 </body>
