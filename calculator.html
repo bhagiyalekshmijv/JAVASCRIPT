@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store</title>
+</head>
+<body>
+    <h3>GROCERY STORE CALCULATION</h3>
+    <button onclick="startCalculation()"> Calculate</button>
+
+    <p id="output"></p>
+
+    <script>
+        function startCalculation() {
+       var output = "";
+
+        for (i = 1; i <= 5; i++) {
+
+        let code = prompt("Enter the product code (1-Apple, 2-Banana, 3-Mango): ");
+        let qty = prompt("Enter the quantity: ");
+
+        code = Number(code);
+        qty = Number(qty);
+
+        var product = "";
+        var price = 0;
+
+        switch(code) {
+    case 1:  
+        product = "Apple";
+        price = 30;
+        break;
+
+    case 2:  
+        product = "Banana";
+        price = 10;
+        break;
+
+    case 3:
+        product = "Mango";
+        price = 50;
+        break;
+
+    default:
+        alert("Invalid product code. Skiping this purchase.");
+        continue;
+}
+
+    var total = price * qty;
+
+    output += "Purchase " + i + ": " + product + "," + " Quantity: " + qty + "," + " Total: ₹" + total + "<br>";
+
+    if (total > 100) {
+        output += "High purchase<br><br>";
+    }
+    else {
+        output +=  "Normal purchase<br><br>";
+    }
+        }
+
+        document.getElementById("output").innerHTML = output;
+    }
+    </script>
+</body>
+</html>
