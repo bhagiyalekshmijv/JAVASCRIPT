@@ -3,31 +3,19 @@
 <html>
 <body>
 
-<h2>JavaScript new Date()</h2>
+<p>Click the button to do a global search for an "M", followed by zero or more "a" characters.</p>
 
-<p>Using new Date(milliseconds), creates a new date object as January 1, 1970, 00:00:00 Universal Time (UTC) plus the milliseconds:</p>
+<button onclick="myFunction()">Try it</button>
 
 <p id="demo"></p>
 
 <script>
-    let friend = {
-            name: "John",
-            birthDate: "1999-07-05"
-        };
-
-var today = new Date();
-var birthDate = new Date(friend.birthDate);
-
-var age = today.getFullYear() - birthDate.getFullYear();
-var day = birthDate.getDate();
-
-if (
-    today.getMonth < birthDate.getMonth() ||
-    (today.getMonth() === birthDate.getMonth() && today.getDate() < day)
-) {
-    age--;
+function myFunction() {
+  var str = "Hellooo World! Hello shupstack!"; 
+  var patt1 = /Ma*/g;
+  var result = str.match(patt1);
+  document.getElementById("demo").innerHTML = result;
 }
-document.getElementById("demo").innerHTML = age;
 </script>
 
 </body>
