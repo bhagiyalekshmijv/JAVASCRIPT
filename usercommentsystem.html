@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Comment System</title>
+</head>
+<body>
+    <h3>COMMENT SECTION</h3>
+
+    <button onclick="commentSection()">Try it</button>
+    <p id="result"></p>
+    <script>
+        
+        function commentSection() {
+
+            var cmt = "My son is 12 years old. Our flat number is 45 and contact is 9876543210."
+
+            var digit = /\d/.test(cmt);
+
+            var replc = cmt.replace(/\d+/g, "NUMBER");
+ 
+            document.getElementById("result").innerHTML = 
+            "<b>Number found:</b> " + digit + "<br><br>" + "<b>Replaced comment:</b> " + replc;
+        }
+    </script>
+</body>
+</html>
