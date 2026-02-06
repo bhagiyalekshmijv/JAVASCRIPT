@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h3>USER INFORMATION</h3>
+
+    <script>
+
+        let person = { 
+		"name":"Kevin",  
+        "email":"kevin@gmail.com",
+        "message":"Highly recommended"
+        } ;
+
+        var received;
+
+        received = () => {
+
+        try {
+            var userData = JS0N.parse(person);
+            console.log("Message received from " + userData.name);
+        }
+
+        catch(err) {
+            console.log("Error:Invalid JSON format");
+        }
+        };
+
+        received();
+
+    </script>
+</body>
+</html>
