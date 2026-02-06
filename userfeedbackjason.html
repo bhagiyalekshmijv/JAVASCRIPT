@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback</title>
+</head>
+<body>
+    <h3>CONTACT FORM</h3>
+
+    <textarea id="userFeedback">
+        {"message":"Thank you for your support."}
+    </textarea>
+
+    <br>
+    <button onclick="processFeedback()">Submit</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        var checkForThank = (text) => {
+            return /thank/i.test(test);
+        };
+
+        function processFeedback() {
+            var result = document.getElementById("result");
+            var jsonString = document.getElementById("userFeedback").value;
+
+            try {
+                var stringConvert = JSON.parse(jsonString);
+                var message = stringConvert.message;
+
+                if (checkForThank(message)) {
+                    result.innerText = "Positive feedback received";
+                } else {
+                    result.innerText = "Feedback noted";
+                }
+                }
+                catch (err) {
+                    result.innerText = "Invalid JSON input";
+                }
+            }
+        
+    </script>
+</body>
+</html>
