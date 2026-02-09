@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Information</title>
+</head>
+<body>
+    <h3>BOOK INFORMATION</h3>
+    <p id="title"></p>
+    <p id="author"></p>
+    <p id="price"></p>
+
+    <script>
+
+        class book {
+	        constructor(book_title, author, price) {
+	        this.book_title = book_title;
+	        this.author = author;
+	        this.price = price;
+	    }
+
+        getTitle() { 
+            return this.book_title; 
+        } 
+
+        getAuthor() { 
+            return this.author; 
+        } 
+
+        setPrice(newPrice) {
+            if (typeof newPrice === "number" && newPrice > 0) {
+            this.price = newPrice;
+        } else {
+            console.log("Invalid price.");
+        }
+        }
+    }
+
+        book1 = new book("Mid Summer Night's Dream", "William Shakespere", 250);
+
+        book1.setPrice(-50);
+
+        book1.setPrice(300);
+    
+    document.getElementById("title").innerHTML = "Title:" + book1.getTitle();
+    document.getElementById("author").innerHTML = "Author:" + book1.getAuthor();
+    document.getElementById("price").innerHTML = "Price:" + book1.price;
+
+
+    </script>
+</body>
+</html>
