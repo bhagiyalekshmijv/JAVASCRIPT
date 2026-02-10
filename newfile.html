@@ -1,22 +1,36 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 <body>
+  <h1 id="demo"></h1>
+  <script>
 
-<p>Click the button to do a global search for an "M", followed by zero or more "a" characters.</p>
+    let car0 = "maruthi";
+    console.log(car0);
 
-<button onclick="myFunction()">Try it</button>
+    let car = "maruthi";
+    document.getElementById("demo").innerHTML = car;
+    
+   // let car = ['Maruthi', 'Tata', 'BMW'];
+    //console.log(car[2]);
 
-<p id="demo"></p>
+     let car1 = ['Maruthi', 'Tata', 'BMW'];
+     document.getElementById("demo").innerHTML = car[2];
 
-<script>
-function myFunction() {
-  var str = "Hellooo World! Hello shupstack!"; 
-  var patt1 = /Ma*/g;
-  var result = str.match(patt1);
-  document.getElementById("demo").innerHTML = result;
-}
-</script>
+     let car2 = ['Maruthi', 'Tata', 'BMW', 'Toyota'];
+     console.log(car2[2]);
+
+     let car_2 = ['Maruthi', 'Tata', 'BMW', 'Toyota'];
+     document.getElementById("demo").innerHTML = car_2[3];
+
+    let car3 = {model:2022, company:"Toyota"}
+    console.log(car3.model)
+
+  </script>
 
 </body>
 </html>
